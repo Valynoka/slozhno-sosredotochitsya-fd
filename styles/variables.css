@@ -2,3 +2,59 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  --text-font-size: 18px;
+  --text-font-height: 23px;
+  --baner-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  --text-font-color: #F1B2CE;
+  --accent-color: #FF0070;
+  --button-text-color: #FF0070;
+  --button-outline-color: #FF0070; 
+  --section-title-color: #FF0070;
+  --corner-decorate-color: #FF0070;
+  --dedicated-background-color: #FF0070;
+  --dedicated-text-color: #000028;
+  --background-page-color: #000028;
+  --page-padding: 20px;
+  --background-header-image: url(../images/cover-image-dark.png);
+}
+
+.title-decor {
+  font-weight: bold;
+  color: var(--dedicated-text-color);
+  background-color: var(--dedicated-background-color);
+  font-size: var(--text-font-size);
+  line-height: var(--text-font-height);
+}
+
+.heder__decorate {
+  position: absolute;
+  background-image: url(../images/Лампочка.png);
+  background-repeat: no-repeat;
+  width: 56px;
+  height: 26px;
+  right: 26px;
+  top: 20px;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 26px;
+  height: 26px;
+  border-top: 1px solid var(--corner-decorate-color);
+  border-right: 1px solid var(--corner-decorate-color);
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 26px;
+  height: 26px;
+  border-left: 1px solid var(--corner-decorate-color);
+  border-bottom: 1px solid var(--corner-decorate-color);
+}
