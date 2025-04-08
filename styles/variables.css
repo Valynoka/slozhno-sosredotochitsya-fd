@@ -5,12 +5,16 @@
 :root {
   --text-font-size: 18px;
   --text-font-height: 23px;
+  --normal-font-weight: 400;
+  --bold-font-weight: 700;
   --baner-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --text-font-color: #F1B2CE;
+  --main-title-color: #DB00FF;
+  --main-title-hieght: 82%;
   --accent-color: #FF0070;
   --button-text-color: #FF0070;
   --button-outline-color: #FF0070; 
-  --section-title-color: #FF0070;
+  --article-title-color: #FF0070;
   --corner-decorate-color: #FF0070;
   --dedicated-background-color: #FF0070;
   --dedicated-text-color: #000028;
@@ -20,7 +24,7 @@
 }
 
 .title-decor {
-  font-weight: bold;
+  font-weight: var(--bold-font-weight);
   color: var(--dedicated-text-color);
   background-color: var(--dedicated-background-color);
   font-size: var(--text-font-size);

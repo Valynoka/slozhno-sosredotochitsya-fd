@@ -6,48 +6,36 @@
   background-color: var(--background-page-color);
   background-position: center;
   background-attachment: fixed;
-  display: grid;
-  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
 }
 
-/* ШАПКА САЙТА */
 .header {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
+  height: 100%;
   background-image: var(--background-header-image);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  row-gap: 60px;
-  padding: var(--page-padding);
+  padding-top:  var(--page-padding);
+  padding-right:  var(--page-padding);
+  padding-left:  var(--page-padding);
+  row-gap: 68px;
 }
 
 .header__theme-menu {
-  grid-column-start: 2 span;
-}
-
-@media (width <= 768px) {
-  .header__theme-menu {
-    grid-column: 2/3;
-    place-self: end;
-    padding: 170px 20px 0 0;
-  }
+  grid-row: 1/2;
+  grid-column: 1/3;
 }
 
 .header__theme-menu-list {
   display: flex;
   justify-content: center;
   gap: 10px;
-}
-
-@media (width <= 768px) {
-  .header__theme-menu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
 }
 
 .header__theme-menu-button {
@@ -73,169 +61,161 @@
   pointer-events: none;
 }
 
-/* Чтобы проще было изменять общий паддинг пришлось
-не добавить отрицательный марджин так как с макетом
-не бьется, а делать отдельный падинг для хедера,
-не хочется*/
 .header__title {
-  grid-column-start: 2 span;
-  color: #DB00FF;
+  grid-row: 2/3;
+  grid-column: 1/3;
   font-size: var(--baner-font-size);
-  font-weight: bold;
+  color: var(--main-title-color);
+  /* line-height: var(--main-title-hieght); */
   text-shadow: 4px 4px 0 var(--accent-color);
   margin-left: -20px;
-}
-
-@media (width <= 768px) {
-  .header__title {
-    align-self: center;
-  }
+  align-self: center;
 }
 
 .header__text {
-  white-space: pre-line;
+  grid-row: 3/4;
   grid-column: 2/3;
-  height: fit-content;
   line-height: var(--text-font-height);
+  height: fit-content;
+  white-space: pre-line;
 }
-/* проблема white-space: pre-line 
-- добавляет отступ сверху.  */
 
-/* БЛОК С ТЕКСТОМ */
-.wrapper {
+/* ОСНОВНОЙ КОНТЕНТ */
+.main {
   display: flex;
   flex-direction: column;
+  gap: 86px;
   padding: var(--page-padding);
-  gap: 88px;
 }
 
 .main__content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto;
-  column-gap: 20px;
-}
-
-.main__content-title {
-  color: var(--section-title-color);
-  font-size: var(--text-font-size);
-  line-height: var(--text-font-height);
-  margin-block-end: 20px;
-}
-
-.main__content-list {
-  display: grid;
-  grid-column: 2 span;
-  gap: 20px;
-}
-
-.main__content-item {
-  display: grid;
-  gap: 10px;
-}
-
-.main__message {
-  font-size: var(--text-font-size);
-  color: var(--text-font-color);
-  font-weight: 100;
-  line-height: var(--text-font-height);
-}
-
-.main__content:nth-of-type(2)
-.main__content-list {
-  grid-row: 2/3;
-  grid-column: 1/4;
-  display: flex;
-  align-items: flex-start;
-}
-
-.main__content:nth-of-type(2)
-.main__content-item {
-  grid-row: 2/3;
-  grid-column: 1/4;
-  min-width: 200px;
-  width: 100%;
-}
-
-@media (width <= 768px) {
-  .main__content:nth-of-type(2)
-  .main__content-list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-
-.main__content-step {
-  font-weight: 400;
-}
-
-/* РАЗДЕЛ ГАЛЕРИИ */
-.main__gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.gallery__list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(315px));
-  box-sizing: border-box;
-  gap: 20px;
+  gap: 22px;
   grid-auto-flow: dense;
 }
 
-.gallery__item:nth-of-type(1n) {
-  grid-column-start: 1;
-  grid-column-end: 3;
+.main__content-title {
+  color: var(--article-title-color);
+  font-size: var(--text-font-size);
+  line-height: var(--text-font-height);
+  font-weight: var(--bold-font-weight);
+  grid-column: 1/2;
+  grid-row: 2 span;
 }
 
-.gallery__item:nth-of-type(2n) {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 3;
+/* Добавил эту обертку, чтобы сделать отступ по макету
+до этого все отступы были 20px */
+.main__content-article {
+  display: grid;
+  grid-column: 2/4;
+  row-gap: 10px;
 }
 
-.gallery__item:nth-of-type(3n) {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 4;
+.main__content:nth-of-type(2) {
+  display: grid;
+  align-items: start;
 }
 
-.gallery__item:nth-of-type(4n) {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
+.main__content:nth-of-type(2)
+.main__content-title {
+  grid-column: 1/2;
+  grid-row: 1/2;
 }
 
-.gallery__item:nth-of-type(5n) {
-  grid-column-start: 2;
-  grid-column-end: 4;
+.main__content:nth-of-type(2)
+.main__content-article:nth-of-type(1) {
+  grid-column: 1/2;
+  grid-row: 2/3;
 }
 
-.gallery__image {
-  inline-size: 100%;
-  block-size: 100%;
-  max-block-size: 100%;
+.main__content:nth-of-type(2)
+.main__content-article:nth-of-type(2) {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.main__content:nth-last-of-type(2)
+.main__content-article:nth-of-type(3) {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.main__content-subtitle {
+  grid-column: 2/4;
+}
+
+.main__content-main-idia {
+  font-weight: var(--normal-font-weight);
+  color: var(--dedicated-text-color);
+  background-color: var(--dedicated-background-color);
+  font-size: var(--text-font-size);
+  line-height: var(--text-font-height);
+  grid-column: 2/4;
+}
+
+.main__content-text {
+  font-size: var(--text-font-size);
+  color: var(--text-font-color);
+  font-weight: var(--normal-font-weight);
+  line-height: var(--text-font-height);
+  grid-column: 2/4;
+}
+
+/* Галерея */
+.main__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1fr, 230px));
+  gap: 20px;
+  grid-auto-flow: row dense;
+}
+
+.main__gallery-subtitle {
+  grid-column: 3 span;
+  grid-row: 1/2;
+}
+
+.main__gallery-image {
   object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
-/* ФУТЕР */
+.main__gallery-image:nth-of-type(1n) {
+  grid-column: 1/3;
+  grid-row: 2/3;
+}
+
+.main__gallery-image:nth-of-type(2n) {
+  grid-column: 3/4;
+  grid-row: 2/4;
+}
+
+.main__gallery-image:nth-of-type(3n) {
+  grid-column: 1/2;
+  grid-row: 3/5;
+}
+
+.main__gallery-image:nth-of-type(4n) {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.main__gallery-image:nth-of-type(5n) {
+  grid-column: 2/4;
+  grid-row: 4/5;
+}
+
 .footer {
   position: relative;
   display: flex;
-  height: 75vw;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 75vw;
 }
 
-.footer__title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #DB00FF;
+.footer__text {
+  color: var(--main-title-color);
   font-size: var(--baner-font-size);
   font-weight: bold;
 }
