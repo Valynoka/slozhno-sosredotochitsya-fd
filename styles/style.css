@@ -9,15 +9,10 @@
   background-attachment: fixed;
   background-position: center;
   background-attachment: fixed;
+  background-color: var(--background-page-color);
   display: flex;
   flex-direction: column;
   row-gap: 60px;
-}
-
-@media (width <= 768px) {
-  .page {
-    row-gap: 40px;
-  }
 }
 
 @media (width <= 688px) {
@@ -77,7 +72,6 @@
 
 @media (width <= 768px) {
   .header__theme-menu-list {
-    display: flex;
     flex-direction: column;
   }
 }
@@ -248,7 +242,7 @@
 }
 
 /* Отображение в колонках */
-.column__view-wrapper {
+.modification__view-wrapper {
   grid-row: 2/3;
   grid-column: 1/4;
   display: grid;
@@ -257,16 +251,16 @@
 }
 
 @media (width <= 768px) {
-  .column__view-wrapper  {
+  .modification__view-wrapper  {
     grid-template-columns: 1fr
   }
 }
 
-.column__view-title {
+.modification__view-title {
   grid-row: 1/2;
 }
 
-.column__view-article {
+.modification__view-article {
   grid-column: auto;
   padding-inline-start: 0;
 }

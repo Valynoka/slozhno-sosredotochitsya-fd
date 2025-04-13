@@ -35,5 +35,6 @@
   --phone-gallery-gap: 10px;
   --table-blocks-padding: 4px;
   --block-visible: none;
+  --background-page-color: #000028;
   --background-header-image: url(../images/cover-image-dark.png);
 }
