@@ -1,13 +1,10 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-/* Добавил grid, чтобы использовать gap */
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-image: var(--background-header-image);
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
   background-attachment: fixed;
   background-color: var(--background-page-color);
   display: flex;
@@ -223,13 +220,13 @@
 }
 
 @media (width <= 768px) {
-  .main__content-article  {
+  .main__content-article {
     padding-inline-start: 7px;
   }
 }
 
 @media (width <= 688px) {
-  .main__content-article  {
+  .main__content-article {
     padding-inline-start: 0;
   }
 }
@@ -251,7 +248,7 @@
 }
 
 @media (width <= 768px) {
-  .modification__view-wrapper  {
+  .modification__view-wrapper {
     grid-template-columns: 1fr
   }
 }
