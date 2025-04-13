@@ -9,18 +9,13 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  --text-font-size: 18px;
-  --text-font-height: 23.4px;
-  --normal-font-weight: 400;
-  --bold-font-weight: 700;
-  --baner-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  --phone-baner-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --text-font-color: #353430;
   --main-title-color: #FFC2E6;
   --main-title-hieght: 82%;
   --accent-color: #FF8DCB;
   --button-text-color: #353430;
   --button-outline-color: #353430;
+  --button-outline-opacity: rgba(50, 49, 45, 0.4);
   --link-border-color: #353430;
   --link-shadow-color: #FF8DCB;
   --article-title-color: #353430;
@@ -28,20 +23,51 @@
   --dedicated-background-color: #FF8DCB;
   --dedicated-text-color: #353430;
   --background-page-color: #FFF1F7;
-  --desktop-padding: 20px;
-  --desktop-gap: 22px;
-  --table-gap: 22px;
-  --phone-gap: 20px;
-  --table-padding: 30px;
-  --phone-pading: 10px;
-  --phone-gallery-gap: 10px;
-  --table-blocks-padding: 4px;
+  --block-visible: none;
   --background-header-image: url(../images/cover-image-light.png);
+}
+
+.theme-light .page {
+  --text-font-color: #353430;
+  --main-title-color: #FFC2E6;
+  --main-title-hieght: 82%;
+  --accent-color: #FF8DCB;
+  --button-text-color: #353430;
+  --button-outline-color: #353430;
+  --button-outline-opacity: rgba(50, 49, 45, 0.4);
+  --link-border-color: #353430;
+  --link-shadow-color: #FF8DCB;
+  --article-title-color: #353430;
+  --corner-decorate-color: #353430;
+  --dedicated-background-color: #FF8DCB;
+  --dedicated-text-color: #353430;
+  --background-page-color: #FFF1F7;
+  --block-visible: none;
+  --background-header-image: url(../images/cover-image-light.png);
+}
+
+@media (prefers-color-scheme: light) {
+  .page {
+    --text-font-color: #353430;
+    --main-title-color: #FFC2E6;
+    --main-title-hieght: 82%;
+    --accent-color: #FF8DCB;
+    --button-text-color: #353430;
+    --button-outline-color: #353430;
+    --button-outline-opacity: rgba(50, 49, 45, 0.4);
+    --link-border-color: #353430;
+    --link-shadow-color: #FF8DCB;
+    --article-title-color: #353430;
+    --corner-decorate-color: #353430;
+    --dedicated-background-color: #FF8DCB;
+    --dedicated-text-color: #353430;
+    --background-page-color: #FFF1F7;
+    --block-visible: none;
+    --background-header-image: url(../images/cover-image-light.png);
+  }
 }
 
 .theme-light .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
 }
-.theme-light .heder__decorate {
-  display: none;
-}
+

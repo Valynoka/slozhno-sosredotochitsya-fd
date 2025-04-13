@@ -8,87 +8,32 @@
   --normal-font-weight: 400;
   --bold-font-weight: 700;
   --baner-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  --phone-baner-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  --phone-baner-font-size: clamp(7.25rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --text-font-color: #F1B2CE;
   --main-title-color: #DB00FF;
   --main-title-hieght: 82%;
   --accent-color: #FF0070;
   --button-text-color: #FF0070;
   --button-outline-color: #FF0070;
+  --button-outline-opacity: rgba(255, 0, 112, 0.4);
   --link-border-color: #F1B2CE;
   --article-title-color: #FF0070;
   --corner-decorate-color: #FF0070;
   --dedicated-background-color: #FF0070;
   --dedicated-text-color: #000028;
   --background-page-color: #000028;
+  --content-gap: 20px;
+  --content-padding: 20px;
+  --title-content-gap: 10px;
   --desktop-padding: 20px;
-  --desktop-gap: 22px;
-  --table-gap: 22px;
+  /* возможон стоит удалить */
+  --desktop-gap: 20px;
+  --table-gap: 20px;
   --phone-gap: 20px;
   --table-padding: 30px;
   --phone-pading: 10px;
   --phone-gallery-gap: 10px;
   --table-blocks-padding: 4px;
+  --block-visible: none;
   --background-header-image: url(../images/cover-image-dark.png);
-}
-
-.title-decor {
-  font-weight: var(--bold-font-weight);
-  color: var(--dedicated-text-color);
-  background-color: var(--dedicated-background-color);
-  font-size: var(--text-font-size);
-  line-height: var(--text-font-height);
-}
-
-.heder__decorate {
-  position: absolute;
-  background-image: url(../images/Лампочка.png);
-  background-repeat: no-repeat;
-  width: 56px;
-  height: 26px;
-  right: 26px;
-  top: 20px;
-}
-
-@media (width <= 688px) {
-  .heder__decorate {
-    right: 15px;
-    top: 10px;
-  }
-}
-
-.decorated-zone::before {
-  content: '';
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 26px;
-  height: 26px;
-  border-top: 1px solid var(--corner-decorate-color);
-  border-right: 1px solid var(--corner-decorate-color);
-}
-
-@media (width <= 688px) {
-  .decorated-zone::before {
-    right: 10px;
-    top: 10px;
-  }
-}
-
-.decorated-zone::after {
-  content: '';
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  width: 26px;
-  height: 26px;
-  border-left: 1px solid var(--corner-decorate-color);
-  border-bottom: 1px solid var(--corner-decorate-color);
-}
-
-@media (width <= 688px) {
-  .heder__decorate::after {
-    left: 10px;
-    bottom: 10px;
-  }
 }
